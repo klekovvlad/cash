@@ -5,6 +5,7 @@
     box-sizing: border-box;
     color: @main;
     .reg();
+    scroll-behavior: smooth;
 }
 li {
     list-style: none;
@@ -14,6 +15,9 @@ a {
 }
 img {
     max-width: 100%;
+}
+body {
+    position: relative;
 }
 @font-face {
     font-family: 'Inter-Regular';
@@ -88,6 +92,23 @@ a.button {
     position: relative;
     z-index: 30;
 }
+.up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: @purple url(../img/icons/arrow.svg) no-repeat center;
+    background-size: 20px 20px;
+    transform: rotate(-90deg);
+    opacity: 0;
+    z-index: 100;
+    transition: 0.3s all linear;
+}
+.up:hover {
+    opacity: 1;
+}
 .header {
     &__wrapper {
         display: flex;
@@ -130,6 +151,8 @@ a.button {
             height: 50px;
             border-radius: 20px;
             border: 2px solid #fff;
+            background: rgba(255,255,255,0.2) url(../img/icons/phone.svg) no-repeat center;
+            background-size: 30px 30px;
         }
     }
 }
@@ -357,12 +380,12 @@ a.button {
             margin-bottom: 30px;
             font-size: 1.5em;
         }
-        span.info {
+        span.inform {
             display: block;
             min-height: 80px;
         }
         ul {
-            margin: 20px 0px;
+            margin: 20px 0px 30px 0px;
             li {
                 position: relative;
                 padding-left: 30px;
@@ -589,7 +612,7 @@ a.button {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 900px) {
     .container {
         max-width: none;
         padding: 0px 10px;
@@ -800,10 +823,8 @@ a.button {
         padding: 50px 0px;
         position: relative;
         &-bg {
-            position: absolute;
-            right: 0;
-            top: 30%;
-            pointer-events: none;
+            max-width: 260px;
+            top: 80%;
         }
         &__row {
             border-radius: 20px;
@@ -821,7 +842,7 @@ a.button {
         }
         &__row:nth-child(1) {
             .online__row-item {
-                font-size: 1em;
+                font-size: 1.5em;
             }
             .online__row-item:nth-child(3),
             .online__row-item:nth-child(4) {
@@ -836,10 +857,10 @@ a.button {
             font-size: 0.875em;
         }
         .person-name {
-            font-size: 1em;
+            font-size: 1.25em;
         }
         &-money {
-            font-size: 1em;
+            font-size: 1.25em;
         }
         &-status {
             margin-bottom: 10px;
@@ -894,5 +915,12 @@ a.button {
             align-items: center;
             justify-content: center;
         }
+    }
+    .up {
+        bottom: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        background-size: 10px 10px;
     }
 }

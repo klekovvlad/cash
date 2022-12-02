@@ -150,3 +150,18 @@ function updateTimes() {
 createTimes();
 updateTimes();
 setInterval(updateTimes, 1000);
+
+const upButton = document.querySelector('.up');
+
+function upShow() {
+    let scrollPos = 1000;
+    if(document.body.scrollTop > scrollPos || document.documentElement.scrollTop > scrollPos) {
+        upButton.style.opacity = '0.3'
+    }else{
+        upButton.style.opacity = '0'
+    };
+};
+
+window.onscroll = function() {
+  upShow();
+};
