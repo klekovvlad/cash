@@ -79,6 +79,22 @@ h4 {
   justify-content: center;
   padding: 50px 0px;
 }
+button.button {
+  display: block;
+  text-align: center;
+  min-width: 100%;
+  background: #ffb400;
+  color: #fff;
+  border: none;
+  padding: 20px 0px;
+  border-radius: 20px;
+  font-size: 1.125em;
+  font-family: 'Inter-Bold';
+  font-weight: normal;
+  line-height: 100%;
+  position: relative;
+  z-index: 30;
+}
 a.button {
   display: block;
   text-align: center;
@@ -688,6 +704,145 @@ a.button {
   font-size: 14px;
   color: #fff;
 }
+.form {
+  padding: 0px 0px 100px 0px;
+  margin-bottom: 80px;
+  background: url(../img/mainbg.png) no-repeat center;
+  background-size: cover;
+  min-height: 1100px;
+}
+.form__info {
+  margin-top: 50px;
+  padding: 50px;
+  border-radius: 20px;
+  margin-bottom: 50px;
+  color: #fff;
+  text-align: center;
+}
+.form__info span.bold {
+  color: #fff;
+}
+.form__info h4 {
+  font-size: 1.75em;
+  text-transform: uppercase;
+  line-height: 120%;
+  color: #fff;
+  margin-bottom: 10px;
+  font-family: 'Inter-Light';
+  font-weight: normal;
+  line-height: 100%;
+}
+.form__info h4 .today {
+  display: inline-block;
+  color: #fff;
+  font-family: 'Inter-Bold';
+  font-weight: normal;
+  line-height: 100%;
+  text-decoration: underline;
+}
+.form__info h5 {
+  font-size: 1.75em;
+  line-height: 120%;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: 'Inter-Light';
+  font-weight: normal;
+  line-height: 100%;
+}
+.form__info h5 .timer-min,
+.form__info h5 .timer-sec {
+  color: #fff;
+  font-family: 'Inter-Bold';
+  font-weight: normal;
+  line-height: 100%;
+  display: inline-block;
+  min-width: 40px;
+  text-align: center;
+  margin: 0px auto;
+}
+.form form {
+  padding: 50px;
+  border-radius: 20px;
+}
+.form form h6 {
+  font-family: 'Inter-Bold';
+  font-weight: normal;
+  line-height: 100%;
+  font-size: 1.75em;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.form form span.safe {
+  display: block;
+  position: relative;
+  left: 30px;
+  color: #fff;
+}
+.form form span.safe:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(../img/icons/safe.svg) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+}
+.form__wrapper {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  align-items: center;
+}
+.form__item label {
+  display: block;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.form__item input {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  outline: none;
+  padding: 15px 25px;
+  min-width: 100%;
+  transition: 0.5s linear;
+  color: #fff;
+}
+.form__item input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+.form__item input:focus {
+  border: 2px solid #fff;
+}
+.form__item .main-btn {
+  border-radius: 10px;
+  margin: 0;
+  margin-right: auto;
+}
+.form__item .police {
+  display: block;
+  position: relative;
+  left: 30px;
+  color: #fff;
+}
+.form__item .police a {
+  color: #fff;
+}
+.form__item .police:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(../img/icons/formok.svg) no-repeat center;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 @media (max-width: 900px) {
   .container {
     max-width: none;
@@ -1013,6 +1168,51 @@ a.button {
     width: 30px;
     height: 30px;
     background-size: 10px 10px;
+  }
+  .form {
+    padding: 0px 0px 50px 0px;
+    margin-bottom: 50px;
+    background-position: 60% center;
+  }
+  .form__info {
+    margin-top: 20px;
+    padding: 30px;
+  }
+  .form__info h4 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+  }
+  .form__info h5 {
+    font-size: 1.3em;
+  }
+  .form__info h5 .timer-min,
+  .form__info h5 .timer-sec {
+    min-width: 30px;
+  }
+  .form form {
+    padding: 30px;
+  }
+  .form form h6 {
+    font-size: 1.25em;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .form__wrapper {
+    grid-template-columns: 1fr;
+    grid-gap: 30px;
+  }
+  .form__item input {
+    min-width: 100%;
+  }
+  .form__item .main-btn {
+    margin: 0px auto;
+  }
+  .form__item .police {
+    font-size: 12px;
+    margin-right: 30px;
+  }
+  .form__item .police a {
+    text-decoration: underline;
   }
 }
 .animate {

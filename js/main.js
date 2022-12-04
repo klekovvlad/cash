@@ -137,6 +137,12 @@ function updateTimes() {
     moneyHour.innerHTML = Number(date.toLocaleString('ru',hour)) + 1;
     moneyMin.innerHTML = '08';
   };
+  if (resolHour.innerHTML === '24') {
+    resolHour.innerHTML = '00'
+  };
+  if (moneyHour.innerHTML === '24') {
+    moneyHour.innerHTML = '00'
+  };
   if (minute < 10) {
     currentMin.innerHTML = '0' + minute;
   };
@@ -172,4 +178,4 @@ window.addEventListener('scroll', () => {
 const mainMoney = document.querySelector('.main-money');
 mainMoney.addEventListener('keyup', () => {
   mainMoney.value = mainMoney.value.replace(/[^\d]/g,'');
-})
+});
