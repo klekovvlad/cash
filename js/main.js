@@ -151,17 +151,25 @@ createTimes();
 updateTimes();
 setInterval(updateTimes, 1000);
 
-const upButton = document.querySelector('.up');
-
-function upShow() {
-    let scrollPos = 1000;
-    if(document.body.scrollTop > scrollPos || document.documentElement.scrollTop > scrollPos) {
-        upButton.style.opacity = '0.3'
-    }else{
-        upButton.style.opacity = '0'
+window.addEventListener('scroll', () => {
+  let windowCenter = window.innerHeight / 2;
+  const animateItems = document.querySelectorAll('.animate-item');
+  animateItems.forEach(el => {
+    let position = el.getBoundingClientRect().top - windowCenter;
+    if (position <= 0) {
+      el.classList.add('animate');
     };
-};
+  });
+  let upShowPos = 1000;
+  const up = document.querySelector('.up')
+  if (window.scrollY > upShowPos) {
+    up.style.opacity = '0.3'
+  } else {
+    up.style.opacity = '0'
+  }
+});
 
-window.onscroll = function() {
-  upShow();
-};
+const mainMoney = document.querySelector('.main-money');
+mainMoney.addEventListener('keyup', () => {
+  mainMoney.value = mainMoney.value.replace(/[^\d]/g,'');
+})

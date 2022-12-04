@@ -118,10 +118,24 @@ a.button {
     }
     &__logo {
         flex: 0 1 10%;
+        display: flex;
+        align-items: center;
+        img {
+            max-width: 60px;
+            margin-right: 10px;
+        }
         span {
-            font-size: 1.75em;
-            text-transform: uppercase;
+            display: block;
+        }
+        span.bold {
             .bold();
+            text-transform: uppercase;
+            font-size: 2em;
+        }
+        span.small {
+            .light();
+            font-size: 1.125em;
+            letter-spacing: 0.4em;
         }
     }
     &__nav {
@@ -167,6 +181,7 @@ a.button {
     }
     &__text {
         max-width: 650px;
+        position: relative;
         h1 {
             text-transform: uppercase;
             font-size: 4em;
@@ -176,6 +191,12 @@ a.button {
         h2 {
             font-size: 2em;
             .light();
+        }
+        img {
+            position: absolute;
+            bottom: -450px;
+            left: 0;
+            max-width: 400px;
         }
     }
     &__form {
@@ -236,6 +257,9 @@ a.button {
             margin-bottom: 30px;
             padding: 30px;
             border-radius: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 0.3s all ease-in-out;
         }
         &-img {
             img {
@@ -354,6 +378,9 @@ a.button {
         background: rgba(179,71,255, 0.1);
         border: 15px solid rgba(255,255,255,1);
         position: relative;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 0.3s all ease-in-out;
         a.button {
             min-width: 100%;
             max-width: 100%;
@@ -404,6 +431,12 @@ a.button {
             }
         }
     }
+    &__item:first-child {
+        transition-delay: 0.3s;
+    }
+    &__item:last-child {
+        transition-delay: 0.6s;
+    }
 }
 
 .steps {
@@ -444,6 +477,9 @@ a.button {
         align-items: center;
         padding: 30px;
         border-radius: 20px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 0.3s all ease-in-out;
         &-img {
             img {
                 max-width: 150px;
@@ -488,6 +524,9 @@ a.button {
         display: grid;
         align-items: center;
         grid-template-columns: 20% 30% 30% 20%;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 0.3s all ease-in-out;
         &-item {
             text-align: center;
         }
@@ -558,6 +597,9 @@ a.button {
     &__item {
         padding: 50px 30px;
         border-radius: 20px;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 0.3s all ease-in-out;
         .current-time, .resol-time, .money-time, span.big {
             display: flex;
             align-items: center;
@@ -577,6 +619,18 @@ a.button {
             font-size: 1.125em;
             .light();
         }
+    }
+    &__item:nth-child(2) {
+        transition-delay: 0.3s;
+    }
+    &__item:nth-child(3) {
+        transition-delay: 0.6s;
+    }
+    &__item:nth-child(5) {
+        transition-delay: 0.3s;
+    }
+    &__item:nth-child(6) {
+        transition-delay: 0.6s;
     }
 }
 
@@ -643,10 +697,15 @@ a.button {
         }
         &__logo {
             flex: 0 1 60%;
-            span {
-                font-size: 1.75em;
-                text-transform: uppercase;
-                .bold();
+            img {
+                max-width: 50px;
+                margin-right: 10px;
+            }
+            span.bold {
+                color: #fff
+            }
+            span.small {
+                color: #fff;
             }
         }
         &__nav {
@@ -675,6 +734,9 @@ a.button {
         }
         &__text {
             max-width: none;
+            img {
+                display: none;
+            }
             h1 {
                 font-size: 2.5em;
                 max-width: 400px;
@@ -784,6 +846,12 @@ a.button {
         }
         &__wrapper {
             grid-template-columns: 1fr;
+        }
+        &__item:first-child {
+            transition-delay: 0s;
+        }
+        &__item:last-child {
+            transition-delay: 0s;
         }
     }
     
@@ -903,6 +971,21 @@ a.button {
                 .light();
             }
         }
+        &__item:nth-child(2) {
+            transition-delay: 0s;
+        }
+        &__item:nth-child(3) {
+            transition-delay: 0s;
+        }
+        &__item:nth-child(4) {
+            transition-delay: 0s;
+        }
+        &__item:nth-child(5) {
+            transition-delay: 0s;
+        }
+        &__item:nth-child(6) {
+            transition-delay: 0s;
+        }
     }
     
     .info {
@@ -923,4 +1006,9 @@ a.button {
         height: 30px;
         background-size: 10px 10px;
     }
+}
+
+.animate {
+    opacity: 1;
+    transform: translateY(0);
 }
