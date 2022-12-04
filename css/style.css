@@ -324,6 +324,8 @@ a.button {
 .feedback__item {
   padding: 30px;
   border-radius: 20px;
+  min-height: 350px;
+  position: relative;
 }
 .feedback__item-info {
   display: flex;
@@ -354,7 +356,9 @@ a.button {
   font-family: 'Inter-Light';
   font-weight: normal;
   line-height: 100%;
-  margin-top: 20px;
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
   font-size: 0.875em;
 }
 .feedback .swiper-prev,

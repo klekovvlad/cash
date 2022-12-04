@@ -312,6 +312,8 @@ a.button {
     &__item {
         padding: 30px;
         border-radius: 20px;
+        min-height: 350px;
+        position: relative;
         &-info {
             display: flex;
             align-items: center;
@@ -338,7 +340,9 @@ a.button {
             span.feedback-date {
                 display: block;
                 .light();
-                margin-top: 20px;
+                position: absolute;
+                bottom: 30px;
+                left: 30px;
                 font-size: 0.875em;
             }
         }
